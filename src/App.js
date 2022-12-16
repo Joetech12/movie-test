@@ -1,6 +1,7 @@
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Row from './components/Row';
+import Search from './components/Search';
 import requests from './Requests';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="pb-[50px] md:pb-[67px]">
       <Navbar />
       <Hero />
+      <Search fetchURL={requests.requestSearch} />
       <Row rowID="1" title="UpComing" fetchURL={requests.requestUpComing} />
       <Row rowID="2" title="Popular" fetchURL={requests.requestPopular} />
       <Row rowID="3" title="Trending" fetchURL={requests.requestTrending} />

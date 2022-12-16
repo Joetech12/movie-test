@@ -6,6 +6,8 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 const Row = ({ title, fetchURL, rowID }) => {
   const [movies, setMovies] = useState([]);
 
+  console.log(movies)
+
   useEffect(() => {
     axios.get(fetchURL).then((response) => {
       setMovies(response.data.results);
@@ -22,8 +24,8 @@ const Row = ({ title, fetchURL, rowID }) => {
   };
 
   return (
-    <div className="px-[28px] md:px-[67px] xl:px-[77px] ">
-      <h2 className="font-bold text-[16px] md:text-[24px] md:leading-[31.25px] text-black mt-[33px] md:mt-[48px]">
+    <div className="pl-[28px] md:pl-[67px] xl:pl-[77px] ">
+      <h2 className="font-normal text-[16px] md:text-[24px] md:leading-[31.25px] text-black mt-[33px] md:mt-[48px]">
         {title}
       </h2>
       <div className="relative flex items-center group mt-[26px] md:mt-[18px]">
