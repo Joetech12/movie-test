@@ -44,9 +44,7 @@ function App() {
         />
       )}
       <Row rowID="2" title="Up Coming" fetchURL={requests.requestUpComing} />
-      <Row rowID="3" title="Popular" fetchURL={requests.requestPopular} />
       <Row rowID="4" title="Trending" fetchURL={requests.requestTrending} />
-      <Row rowID="5" title="Top Rated" fetchURL={requests.requestTopRated} />
     </div>
   );
 }
