@@ -9,11 +9,11 @@ const MovieSearch = ({ item }) => {
       <img
         className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] block object-cover px-[6.5px] rounded-[12px]"
         src={item?.Poster}
-        alt=''
+        alt={item?.Title}
       />
       <div className="absolute top-0 left-0 w-full h-full  bg-black/0 hover:bg-blend-darken  hover:bg-black/50 opacity-100 text-white rounded-[12px] transition-all duration-300">
         <p className="white-space-normal text-[16px] md:text-[18px] px-[0px] leading-[23.44px]  md:leading-[31.25px] font-normal flex justify-center items-center h-full text-center truncate ">
-          ''
+          {item?.Title}
         </p>
         <p
           onClick={() => {
