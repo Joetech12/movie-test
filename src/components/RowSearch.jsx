@@ -2,15 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Movie from './Movie';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import MovieSearch from './MovieSearch';
 
-const Row = ({ title, fetchURL, rowID }) => {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    axios.get(fetchURL).then((response) => {
-      setMovies(response.data.results);
-    });
-  }, [fetchURL]);
+const RowSearch = ({ title, fetchURL, rowID, movies }) => {
+  console.log(movies);
 
   const slideLeft = () => {
     var slider = document.getElementById('slider' + rowID);
@@ -36,8 +31,8 @@ const Row = ({ title, fetchURL, rowID }) => {
           id={'slider' + rowID}
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
         >
-          {movies.map((movie, id) => (
-            <Movie key={id} item={movie} />
+          {movies.map((movie, index) => (
+            <MovieSearch key={index} item={movie} />
           ))}
         </div>
         <MdChevronRight
@@ -50,4 +45,4 @@ const Row = ({ title, fetchURL, rowID }) => {
   );
 };
 
-export default Row;
+export default RowSearch;
