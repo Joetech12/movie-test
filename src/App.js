@@ -33,12 +33,12 @@ function App() {
       <Navbar />
       <Hero />
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-      <RowSearch
+     {searchValue && <RowSearch
         rowID="1"
-        title="Search Result"
+        title="Search Results"
         fetchURL={requests.requestUpComing}
         movies={movies}
-      />
+      />}
       <Row rowID="2" title="UpComing" fetchURL={requests.requestUpComing} />
       <Row rowID="3" title="Popular" fetchURL={requests.requestPopular} />
       <Row rowID="4" title="Trending" fetchURL={requests.requestTrending} />
