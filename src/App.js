@@ -7,6 +7,8 @@ import Search from './components/Search';
 import requests from './Requests';
 
 function App() {
+  const { REACT_APP_OMD_KEY } = process.env;
+
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
@@ -41,11 +43,10 @@ function App() {
           movies={movies}
         />
       )}
-      <Row rowID="2" title="UpComing" fetchURL={requests.requestUpComing} />
+      <Row rowID="2" title="Up Coming" fetchURL={requests.requestUpComing} />
       <Row rowID="3" title="Popular" fetchURL={requests.requestPopular} />
       <Row rowID="4" title="Trending" fetchURL={requests.requestTrending} />
       <Row rowID="5" title="Top Rated" fetchURL={requests.requestTopRated} />
-      <Row rowID="6" title="Up Coming" fetchURL={requests.requestUpComing} />
     </div>
   );
 }
