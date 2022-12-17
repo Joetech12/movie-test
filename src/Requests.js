@@ -1,5 +1,4 @@
 const key = '7422d968673eab7cc3d71bd267306e1c';
-const ODBKey = ''
 
 const requests = {
   requestPopular: `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`,
